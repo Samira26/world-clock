@@ -1,3 +1,17 @@
+function currentLocation() {
+  //Current location
+  let currentCityElement = document.querySelector("#current-city");
+  let currentTimeZone = moment.tz.guess();
+  let currentTime = moment().tz(currentTimeZone);
+  let currentCityName = currentTimeZone.replace("_", " ").split("/")[1];
+
+  currentCityElement.innerHTML = ` <div class="current-city" id="current-city">
+          ${currentCityName}, ${currentTime.format(
+    "MMMM Do YYYY"
+  )}, ${currentTime.format("HH:mm:ss A")}
+        </div>`;
+}
+
 function cityTimezone() {
   let londonElement = document.querySelector("#london");
   if (londonElement) {
@@ -23,6 +37,32 @@ function cityTimezone() {
       "HH:mm:ss [<small>]A[</small]"
     );
   }
+
+  //Nairobi
+  let nairobiElement = document.querySelector("#nairobi");
+  if (nairobiElement) {
+    let nairobiDateElement = nairobiElement.querySelector(".date");
+    let nairobiTimeElement = nairobiElement.querySelector(".time");
+    let nairobiTime = moment().tz("Africa/Nairobi");
+
+    nairobiDateElement.innerHTML = nairobiTime.format("MMMM Do YYYY");
+    nairobiTimeElement.innerHTML = nairobiTime.format(
+      "HH:mm:ss [<small>]A[</small]"
+    );
+  }
+
+  //Tokyo
+  let tokyoElement = document.querySelector("#tokyo");
+  if (tokyoElement) {
+    let tokyoDateElement = tokyoElement.querySelector(".date");
+    let tokyoTimeElement = tokyoElement.querySelector(".time");
+    let tokyoTime = moment().tz("Asia/Tokyo");
+
+    tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
+    tokyoTimeElement.innerHTML = tokyoTime.format(
+      "HH:mm:ss [<small>]A[</small]"
+    );
+  }
 }
 
 function updateCity(event) {
@@ -42,9 +82,11 @@ function updateCity(event) {
             "HH:mm:ss"
           )} <small>${cityTime.format("A")}</small></div>
         </div>
+        <a href="index.html"><button>🔙 Homepage</button></a>
   `;
 }
-
+currentLocation();
+setInterval(currentLocation, 1000);
 cityTimezone();
 setInterval(cityTimezone, 1000);
 

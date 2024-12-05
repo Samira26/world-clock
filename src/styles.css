@@ -1,6 +1,6 @@
 body {
-  background-color: #f4effa;
   font-family: "Sarabun", sans-serif;
+  background-image: url("file:///Users/samira/Documents/SheCodes/Plus%20Add-ons/sunrise-3.jpg");
 }
 h1 {
   text-align: center;
@@ -13,21 +13,44 @@ select {
   padding: 10px;
   border: 1px solid #cdb8e6;
   border-radius: 4px;
-  background-color: #f4effa;
+  background-color: rgba(200, 177, 228, 0.5);
+  color: white;
 }
 
 h2 {
   margin: 0 0 5px;
-  font-size: 35px;
+  font-size: 40px;
+}
+
+img {
+  width: 50px;
+  vertical-align: text-bottom;
+}
+
+p {
+  margin: 5px 0;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .container {
   max-width: 600px;
-  margin: 60px auto;
-  background-color: white;
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 30px;
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.current-location {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.current-city {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  font-weight: 800;
+  padding: 0 0 5px;
 }
 
 .city {
@@ -36,8 +59,9 @@ h2 {
   margin: 10px 0;
   padding: 20px 0;
 }
+
 .date {
-  color: #c8b1e4;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .time {
@@ -47,11 +71,19 @@ h2 {
 .time small {
   font-size: 20px;
   vertical-align: middle;
-  color: #c8b1e4;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 footer {
   text-align: center;
+}
+
+button {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(200, 177, 228, 0.5);
+  border-radius: 8px;
+  border: 1px solid #c8b1e4;
+  padding: 10px;
 }
 
 a {

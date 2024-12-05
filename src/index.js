@@ -82,7 +82,7 @@ function updateCity(event) {
             "HH:mm:ss"
           )} <small>${cityTime.format("A")}</small></div>
         </div>
-        <a href="index.html"><button>🔙 Homepage</button></a>
+        <a href="/"><button>🔙 Homepage</button></a>
   `;
 }
 currentLocation();
